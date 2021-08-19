@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,13 +40,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
            
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Category</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Games</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Order</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Signup</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.php">Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="Games.php">Games</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Order</a></li>
+                <li class="nav-item"><a class="nav-link" href="Admin_signup.php">Signup</a></li>
+                <li class="nav-item"><a class="nav-link" href="Admin_login.php">Login</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li> -->
             </ul>
           </div>
        
