@@ -1,3 +1,7 @@
+<?php 
+    include ('header.php');
+    require ('DB_connection.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,39 +45,29 @@
              </tr>
          </thead>
          <tbody>
-                 <tr>
-                         <td>1</td>
-                         <td>Mashrur Rafin</td>
-                         <td>rafin12</td>
-                         <td class="float-left">
-                             <a class="btn btn-outline-warning" href="">Update Admin</a>
-                             <a class="btn btn-outline-danger" href="">Delete Admin</a>
-                         </td>
-     
-                 </tr>
-                 <tr>
-                    <td>2</td>
-                    <td>Rahemul Islam</td>
-                    <td>rahem45</td>
-                    <td class="float-left">
-                        <a class="btn btn-outline-warning" href="">Update Admin</a>
-                        <a class="btn btn-outline-danger" href="">Delete Admin</a>
-                    </td>
+            <?php
+                    $sql= 'SELECT * FROM admins ';
+                    $result = mysqli_query($connected, $sql); 
 
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Mahfuj Jim</td>
-                <td>jim78</td>
-                <td class="float-left">
-                    <a class="btn btn-outline-warning" href="">Update Admin</a>
-                    <a class="btn btn-outline-danger" href="">Delete Admin</a>
-                </td>
-        </tr>
+                        while ($admins = mysqli_fetch_array($result)) {?>
+                        <tr>
+                            <td class="p-3"><?php echo "$admins[id]"; ?></td>
+                            <td class="p-3"><?php echo "$admins[full_name]";?></td>
+                            <td class="p-3"><?php echo "$admins[username]";?></td>
+                            <td class="float-left">
+                                <a class="btn btn-outline-warning" href="">Update Admin</a>
+                                <a class="btn btn-outline-danger" href="Admin_delete.php?id=<?php echo $admins['id']; ?>">Delete Admin</a>
+                             </td>
+
+                        </tr>
+                    <?php 
+                    }
+                    
+                ?>
                 
          </tbody>
      </table>
-     <div class="text-center"><a class="btn btn-outline-success" href="">Add Admin</a></div>
+     <div class="text-center"><a class="btn btn-outline-success" href="Admin_signup.php">Add Admin</a></div>
     </div>
    </div> 
 
@@ -82,6 +76,9 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<?php 
+    include ('footer.php');
+ ?>
 
 
 </body>

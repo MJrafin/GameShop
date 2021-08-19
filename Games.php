@@ -28,41 +28,25 @@
 
         <div class="row justify-content-center pt-3 ">
             <h2 class="text-center pb-3 pt-3 text-white">Action Games</h3>
-            <div class="col-lg-3">
-               <div class="card bg-dark text-white">
-                  <img class="card-img-top" src="img/gta.jpg" alt="" style="width: 100%; height:350px;">
-                  <div class="card-body">
-                     <h3 class="card-title text-center">GTA 5</h3>
-                     <p>Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond.</p>
-                     <h5 class="card-title">Price: 2000 Taka</h5>
-                     <div class= "text-center pt-4"><a href=""><button type="button" class="btn btn-info">Buy Now</button></a></div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card bg-dark text-white">
-                   <img class="card-img-top" src="img/cod.jpg" alt="" style="width: 100%; height:350px;">
-                   <div class="card-body">
-                      <h3 class="card-title text-center">Call of Duty: MW</h3>
-                      <p>The iconic first-person shooter game is back! Cross play, free maps and modes, and new engine deliver the largest technical leap in Call of Duty history.</p>
-                      <h5 class="card-title">Price: 1500 Taka</h5>
-                      <div class= "text-center pt-4"><a href=""><button type="button" class="btn btn-info">Buy Now </button></a></div>
-                   </div>
-             </div> 
-             </div> 
+                <?php
+                    $sql= 'SELECT * FROM games ';
+                    $result = mysqli_query($connected, $sql); 
 
-           <div class="col-lg-3">
-            <div class="card bg-dark text-white">
-                  <img class="card-img-top" src="img/pubg.jpg" alt="" style="width: 100%; height:350px;">
-                  <div class="card-body">
-                     <h3 class="card-title text-center">PUBG</h3>
-                     <p>PUBG is a battle royale shooter that pits 100 players against each other in a struggle for survival.its platforms and voice support and movements beyond gaming universe.</p>
-                     <h5 class="card-title">Price: 1200 Taka </h5>
-                     <div class= "text-center pt-4"><a href=""><button type="button" class="btn btn-info">Buy Now</button></a></div>
-                  </div>
-               </div>
-         </div>
-         </div>
+                        while ($games = mysqli_fetch_array($result)) {?>
+                            <div class="col-lg-3">
+                               <div class="card bg-dark text-white">
+                                  <?php  echo '<img class="card-img-top" src="img/',$games['image'],'" alt="" style="width: 100%; height:350px;">';?>
+                                  <div class="card-body">
+                                     <h3 class="card-title text-center"><?php echo " $games[title] "; ?></h3>
+                                     <p><?php echo " $games[description] "; ?></p>
+                                     <h5 class="card-title">Price: <?php echo " $games[price] "; ?> Taka</h5>
+                                     <div class= "text-center pt-4"><a href="order_form.php?id=<?php echo $games['id']; ?>"><button type="button" class="btn btn-info">Buy Now</button></a></div>
+                                  </div>
+                               </div>
+                            </div>
+                <?php }?>
+            
+        </div>
     </div>
  
     

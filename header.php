@@ -44,8 +44,18 @@
                 <li class="nav-item"><a class="nav-link" href="category.php">Category</a></li>
                 <li class="nav-item"><a class="nav-link" href="Games.php">Games</a></li>
                 <li class="nav-item"><a class="nav-link" href="">Order</a></li>
-                <li class="nav-item"><a class="nav-link" href="Admin_signup.php">Signup</a></li>
-                <li class="nav-item"><a class="nav-link" href="Admin_login.php">Login</a></li>
+                
+                <?php
+                    if (isset($_SESSION['username'])){
+                        echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="Admin_manager.php">Admin</a></li>';  
+                    }
+                    else{
+                        echo '<li class="nav-item"><a class="nav-link" href="Admin_login.php">Admin</a></li>'; 
+                        
+                    }
+                ?>    
+                <!-- <li class="nav-item"><a class="nav-link" href="Admin_login.php">Login</a></li> -->
                 <!-- <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li> -->
             </ul>
           </div>

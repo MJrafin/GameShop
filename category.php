@@ -28,35 +28,21 @@
 
         <div class="row justify-content-center pt-3 ">
             <h2 class="text-center pb-3 pt-3 text-white">Categories</h3>
-            <div class="col-lg-3">
-               <div class="card bg-dark text-white" style="border: black 100px;">
-                  <img class="card-img-top" src="img/yMzgIO.jpg" alt="" style="width: 100%; height:350px;">
-                  <div class="card-body">
-                     <h3 class="card-title text-center">Action Games</h3>
-                     <div class= "text-center pt-2"><a href=""><button type="button" class="btn btn-info">Browse</button></a></div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card bg-dark text-white">
-                   <img class="card-img-top" src="img/Racing1.jpg" alt="" style="width: 100%; height:350px;">
-                   <div class="card-body">
-                      <h3 class="card-title text-center">Racing Games</h3>
-                      <div class= "text-center pt-2"><a href=""><button type="button" class="btn btn-info">Browse</button></a></div>
-                   </div>
-             </div> 
-             </div> 
+                <?php
+                    $sql= 'SELECT * FROM category ';
+                    $result = mysqli_query($connected, $sql); 
 
-           <div class="col-lg-3">
-            <div class="card bg-dark text-white">
-                  <img class="card-img-top" src="img/sports.jpg" alt="" style="width: 100%; height:350px;">
-                  <div class="card-body">
-                     <h3 class="card-title text-center">Sports Games</h3>
-                     <!-- <h5 class="card-title">Price: ৳750  </h5> -->
-                     <div class= "text-center pt-2"><a href=""><button type="button" class="btn btn-info">Browse</button></a></div>
-                  </div>
-               </div>
-         </div>
+                        while ($category = mysqli_fetch_array($result)) {?>
+                            <div class="col-lg-3">
+                               <div class="card bg-dark text-white" style="border: black 100px;">
+                                  <?php  echo '<img class="card-img-top" src="img/',$category['image'],'" alt="" style="width: 100%; height:350px;">';?>
+                                  <div class="card-body">
+                                     <h3 class="card-title text-center"><?php echo " $category[title] "; ?></h3>
+                                     <div class= "text-center pt-2"><a href=""><button type="button" class="btn btn-info">Browse</button></a></div>
+                                  </div>
+                               </div>
+                            </div>
+                        <?php } ?>
          </div>
     </div>
  

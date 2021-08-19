@@ -153,18 +153,31 @@ label {
             <div class="col-lg-6 col-md-8 login-box">
                 <div class="col-lg-12 login-title">
                     ADMIN LOGIN
+                    <div class="text-center pt-5 text-danger ">
+                        <h3><?php 
+                            if (isset($_GET["error"])) {
+                                if ($_GET["error"]== "usernameexist") {
+                                    echo 'Username does not exist!!!';
+                                }
+                                elseif ($_GET["error"]== "wrongpassword") {
+                                    echo 'Passward does not match!!!';
+                                }
+                            }
+        
+                         ?></h3>
+                    </div>
                 </div>
 
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
-                        <form>
+                        <form action="Admin_login_backend.php" method="post">
                             <div class="form-group">
                                 <label class="form-control-label">USERNAME</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">PASSWORD</label>
-                                <input type="password" class="form-control" i>
+                                <input type="password" name="password" id="password" class="form-control" i>
                             </div>
 
                             <div class="col-lg-12 loginbttm">
@@ -172,10 +185,11 @@ label {
                                     <!-- Error Message -->
                                 </div>
                                 <div class="col-lg-6 login-btm login-button pt-2" style="margin-left: 30px;">
-                                    <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                                    <button type="submit" name="login" class="btn btn-outline-primary">LOGIN</button>
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-2"></div>
