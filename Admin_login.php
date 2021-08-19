@@ -21,7 +21,7 @@
       
     
     <style>
-        .login-box {
+    .login-box {
     margin-top: 75px;
     height: auto;
     background: #1A2226;
@@ -34,8 +34,6 @@
     font-size: 80px;
     line-height: 100px;
     background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
-    /* -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
 }
 
 .login-title {
@@ -153,9 +151,6 @@ label {
         <div class="row">
             <div class="col-lg-3 col-md-2"></div>
             <div class="col-lg-6 col-md-8 login-box">
-                <!-- <div class="col-lg-12 login-key">
-                    <i class="fa fa-key" aria-hidden="true"></i>
-                </div> -->
                 <div class="col-lg-12 login-title">
                     ADMIN LOGIN
                 </div>
