@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8">
+    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"></script>
-      
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
      
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
       
     
 <style>
@@ -64,15 +62,20 @@
 
 
 .crop {
-        width: 100%;
-        height: 700px;
-        overflow: hidden;
-    }
+   width: 100%;
+   height: 470px;
+  overflow: hidden;
+}
 
-    .crop img {
-        width: 100%;
-        height: 700px;
-    }
+.crop img {
+   width: 100%;
+  height: 700px;
+}
+
+.card-fix{
+  height: 650px;
+
+}
 
 </style>
 
@@ -80,11 +83,9 @@
 <body>
 
     
-
+ 
     <div class= "crop">
         <img src="img/5494392.jpg" alt="">
-
-       
     <div class="wrap">
         <div class="text-white text-center pb-5"> <h3 >Welcome to Element Gaming Store</h3></div>
         <div class="search">
@@ -95,8 +96,32 @@
         </div>
      </div>
     </div>
-    
 
+    <div class= "text-white"style="background: #000;">
+        <div class="container pb-5">
+        <div class="row justify-content-center pt-3 ">
+            <h3 class="text-center pb-4 pt-3 text-white">Exclusive Featured Games</h3>
+                <?php
+                    $sql= 'SELECT * FROM games ';
+                    $result = mysqli_query($connected, $sql); 
+
+                        while ($games = mysqli_fetch_array($result)) {?>
+                            <div class="col-lg-4 pb-4">
+                               <div class="card bg-dark text-white card-fix">
+                                  <?php  echo '<img class="card-img-top" src="img/',$games['image'],'" alt="" style="width: 100%; height:350px;">';?>
+                                  <div class="card-body">
+                                     <h3 class="card-title text-center"><?php echo " $games[title] "; ?></h3>
+                                     <p><?php echo " $games[description] "; ?></p>
+                                     <h5 class="card-title">Price: <?php echo " $games[price] "; ?> Taka</h5>
+                                     <div class= "text-center pt-4"><a href="order_form.php?id=<?php echo $games['id']; ?>"><button type="button" class="btn btn-info">Buy Now</button></a></div>
+                                  </div>
+                               </div>
+                            </div>
+                <?php }?>  
+          </div>
+     </div>
+    </div>
+    
 
     
 

@@ -38,11 +38,17 @@
                                   <?php  echo '<img class="card-img-top" src="img/',$category['image'],'" alt="" style="width: 100%; height:350px;">';?>
                                   <div class="card-body">
                                      <h3 class="card-title text-center"><?php echo " $category[title] "; ?></h3>
-                                     <div class= "text-center pt-2 pb-1"><a href=""><button type="button" class="btn btn-info">Browse</button></a></div>
+                                     <div class= "text-center pt-5">
+                                      <a href=""><button type="button" class="btn btn-warning m-1">Update Category</button></a>
+                                      <a href=""><button type="button" class="btn btn-danger">Delete Category</button></a>
+                                    </div>
                                   </div>
                                </div>
                             </div>
                         <?php } ?>
+
+
+                        <div class="text-center"><a class="mt-3 mb-3 btn btn-success btn-lg" href="">Add Category</a></div>
          </div>
     </div>
  </div>

@@ -28,7 +28,7 @@
  <div style="background: #000;">
     <div class="container pb-5">
         <div class="row justify-content-center pt-3 ">
-            <h2 class="text-center pb-3 pt-3 text-white">Action Games</h2>
+            <h2 class="text-center pb-3 pt-3 text-white">Games Manager</h2>
                 <?php
                     $sql= 'SELECT * FROM games ';
                     $result = mysqli_query($connected, $sql); 
@@ -41,11 +41,16 @@
                                      <h3 class="card-title text-center"><?php echo " $games[title] "; ?></h3>
                                      <p><?php echo " $games[description] "; ?></p>
                                      <h5 class="card-title">Price: <?php echo " $games[price] "; ?> Taka</h5>
-                                     <div class= "text-center pt-4"><a href="order_form.php?id=<?php echo $games['id']; ?>"><button type="button" class="btn btn-info">Buy Now</button></a></div>
+                                     <div class= "text-center pt-3 mt-2">
+                                      <a href="#"><button type="button" class="btn btn-warning m-1">Update Game</button></a>
+                                      <a href="#"><button type="button" class="btn btn-danger">Delete Game</button></a>
+                                    </div>
                                   </div>
                                </div>
                             </div>
                 <?php }?> 
+
+                <div class="text-center"><a class="mt-3 mb-3 btn btn-success btn-lg" href="">Add Game</a></div>
           </div>
      </div>		
   </div>
