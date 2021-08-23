@@ -102,7 +102,7 @@
         <div class="row justify-content-center pt-3 ">
             <h3 class="text-center pb-4 pt-3 text-white">Exclusive Featured Games</h3>
                 <?php
-                    $sql= 'SELECT * FROM games ';
+                    $sql= 'SELECT * FROM games where exclusive="true";';
                     $result = mysqli_query($connected, $sql); 
 
                         while ($games = mysqli_fetch_array($result)) {?>

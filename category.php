@@ -38,10 +38,10 @@
                                   <?php  echo '<img class="card-img-top" src="img/',$category['image'],'" alt="" style="width: 100%; height:350px;">';?>
                                   <div class="card-body">
                                      <h3 class="card-title text-center"><?php echo " $category[title] "; ?></h3>
-                                     <div class= "text-center pt-2 pb-1"><a href=""><button type="button" class="btn btn-info">Browse</button></a></div>
+                                     <div class= "text-center pt-2 pb-1"><a href="category_game.php?cat=<?php echo $category['title'];?>"><button type="button" class="btn btn-info">Browse</button></a></div>
                                   </div>
                                </div>
-                            </div>
+                            </div>  
                         <?php } ?>
          </div>
     </div>

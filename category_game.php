@@ -28,30 +28,25 @@
  <div style="background: #000;">
     <div class="container pb-5">
         <div class="row justify-content-center pt-3 ">
-            <?php
-                    $sql= 'SELECT * FROM games GROUP BY category';
-                    $result = mysqli_query($connected, $sql); 
-                    while ($games = mysqli_fetch_array($result)) {?>
-                        <h2 class="text-center pb-3 pt-3 text-white"><?php echo $games['category'] ?></h2>
-                        <?php 
-                        $categ = $games['category'];
-                        $sql2= "SELECT * FROM games WHERE category = '$categ';";
-                        $result2 = mysqli_query($connected, $sql2);
-                        while ($games2 = mysqli_fetch_array($result2)) {?>
-            
+            <h2 class="text-center pb-3 pt-3 text-white"><?php echo $_GET['cat']; ?></h2>
+                <?php
+                        $cate = $_GET['cat'];
+                        $sql= "SELECT * FROM games WHERE category = '$cate';";
+                        $result = mysqli_query($connected, $sql);
+                        while ($games = mysqli_fetch_array($result)) {?>
                             <div class="col-lg-4 pb-4">
                                <div class="card bg-dark text-white card-fix">
-                                  <?php  echo '<img class="card-img-top" src="img/',$games2['image'],'" alt="" style="width: 100%; height:350px;">';?>
+                                  <?php  echo '<img class="card-img-top" src="img/',$games['image'],'" alt="" style="width: 100%; height:350px;">';?>
                                   <div class="card-body">
-                                     <h3 class="card-title text-center"><?php echo " $games2[title] "; ?></h3>
-                                     <p><?php echo " $games2[description] "; ?></p>
-                                     <h5 class="card-title">Price: <?php echo " $games2[price] "; ?> Taka</h5>
-                                     <div class= "text-center pt-4"><a href="order_form.php?id=<?php echo $games2['id']; ?> & price=<?php echo $games2['price']; ?>" ><button type="button" class="btn btn-info">Buy Now</button></a></div>
+                                     <h3 class="card-title text-center"><?php echo " $games[title] "; ?></h3>
+                                     <p><?php echo " $games[description] "; ?></p>
+                                     <h5 class="card-title">Price: <?php echo " $games[price] "; ?> Taka</h5>
+                                     <div class= "text-center pt-4"><a href="order_form.php?id=<?php echo $games['id']; ?> & price=<?php echo $games['price']; ?>"><button type="button" class="btn btn-info">Buy Now</button></a></div>
                                   </div>
                                </div>
                             </div>
-                <?php }
-            }?> 
+                <?php }?>
+
           </div>
      </div>		
   </div>
