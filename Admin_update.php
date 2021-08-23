@@ -152,30 +152,42 @@ label {
             <div class="col-lg-6 col-md-8 login-box">
               
                 <div class="col-lg-12 login-title">
-                    UPDATE ADMIN INFO 
+                    UPDATE ADMIN PASSWORD 
+                    <div class="text-center pt-5 text-danger ">
+                <h3><?php 
+                    if (isset($_GET["error"])) {
+                        if ($_GET["error"]== "passwardMissMatch") {
+                            echo 'Confirm Passward does not match!!!';
+                        }
+                        elseif ($_GET["error"]== "wrongpassword") {
+                            echo 'Passward does not match!!!';
+                        }
+                    }
+
+                 ?></h3>
+                </div>
                 </div>
 
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
-                        <form>
+                        <form action="Admin_update_backend.php" method="post">
                             <div class="form-group">
                                 <label class="form-control-label">OLD PASSWORD</label>
-                                <input type="password" class="form-control" i>
+                                <input type="password" class="form-control" name="oldpassword">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">NEW PASSWORD</label>
-                                <input type="password" class="form-control" i>
+                                <input type="password" class="form-control" name="newpassword">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">CONFIRM PASSWORD</label>
-                                <input type="password" class="form-control" i>
+                                <input type="password" class="form-control" name="confirmpassword">
                             </div>
                             <div class="col-lg-12 loginbttm">
                                 <div class="col-lg-6 login-btm login-text">
-                                    <!-- Error Message -->
                                 </div>
                                 <div class="col-lg-6 login-btm login-button pt-2" style="margin-left: 30px;">
-                                    <button type="submit" class="btn btn-outline-primary">CONFIRM</button>
+                                    <button type="submit" name="update" class="btn btn-outline-primary">CONFIRM</button>
                                 </div>
                             </div>
                         </form>

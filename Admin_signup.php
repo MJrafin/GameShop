@@ -186,7 +186,7 @@ label {
                                     <!-- Error Message -->
                                 </div>
                                 <div class="col-lg-6 login-btm login-button pt-2" style="margin-left: 30px;">
-                                    <button type="submit" name="signup" class="btn btn-outline-primary">SIGNUP</button>
+                                    <button type="submit" name="signup" class="btn btn-outline-primary">ADD</button>
                                 </div>
                             </div>
                         </form>

@@ -42,15 +42,15 @@
                                      <p><?php echo " $games[description] "; ?></p>
                                      <h5 class="card-title">Price: <?php echo " $games[price] "; ?> Taka</h5>
                                      <div class= "text-center pt-3 mt-2">
-                                      <a href="#"><button type="button" class="btn btn-warning m-1">Update Game</button></a>
-                                      <a href="#"><button type="button" class="btn btn-danger">Delete Game</button></a>
+                                      <a href="Games_Update_form.php"><button type="button" class="btn btn-warning m-1">Update Game</button></a>
+                                      <a href="Games_manager_backend.php?id=<?php echo $games['id']; ?>&action=delete"><button type="button" name="delete" class="btn btn-danger">Delete Game</button></a>
                                     </div>
                                   </div>
                                </div>
                             </div>
                 <?php }?> 
 
-                <div class="text-center"><a class="mt-3 mb-3 btn btn-success btn-lg" href="">Add Game</a></div>
+                <div class="text-center"><a class="mt-3 mb-3 btn btn-success btn-lg" href="Games_add_form.php">Add Game</a></div>
           </div>
      </div>		
   </div>

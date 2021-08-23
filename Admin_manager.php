@@ -1,6 +1,7 @@
 <?php 
     include ('header.php');
     require ('DB_connection.php');
+    $total_sell=0;
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,11 +64,7 @@
      
      <div class="text-center pt-4 m-3">
     <a class="btn btn-warning" href="Admin_signup.php">Add Admin</a> 
-    <a class="btn btn-warning" href="">Update Password</a>
-        <div class="text-center pt-2">
-            <a class="btn btn-warning" href="Games_manager.php">Games Manager</a> 
-            <a class="btn btn-warning" href="category_manager.php">Category Manager</a>
-        </div>
+    <a class="btn btn-warning" href="Admin_update.php">Change Password</a>
     </div>
 
     </div>
@@ -86,20 +83,26 @@
              </tr>
          </thead>
          <tbody>
-            
-                        <tr>
-                            <td class="p-3">GTA 5</td>
-                            <td class="p-3">23</td>
-                            <td class="p-3">26000</td>
-                        </tr>
-                
+            <?php
+                    $sql= 'SELECT * FROM games ';
+                    $result = mysqli_query($connected, $sql); 
+
+                        while ($games = mysqli_fetch_array($result)) {?>
+                            <tr>
+                                <td class="p-3"><?php echo "$games[title]"; ?></td>
+                                <td class="p-3"><?php echo "$games[total_sell]"; ?></td>
+                                 <td class="p-3"><?php $sell = $games['total_sell']*$games['price']; $total_sell+=$sell; echo $sell; ?></td>
+                            </tr>
+                <?php 
+                    } 
+                ?>
          </tbody>
      </table>
 
                 <div class="row">
                 <div class= col-lg-4></div>     
                 <div class= col-lg-4>
-                <div class="text-center text-warning pt-5"><h5 class="p-4" style="border: 2px solid white">Total Earnings: 2457890 Taka </h5> </div>
+                <div class="text-center text-warning pt-5"><h5 class="p-4" style="border: 2px solid white">Total Earnings: <?php echo $total_sell; ?> Taka </h5> </div>
                 </div>
                 </div>    
                 <div class= col-lg-4>

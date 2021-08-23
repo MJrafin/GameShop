@@ -46,16 +46,20 @@
                                      <h3 class="card-title text-center"><?php echo " $games2[title] "; ?></h3>
                                      <p><?php echo " $games2[description] "; ?></p>
                                      <h5 class="card-title">Price: <?php echo " $games2[price] "; ?> Taka</h5>
-                                     <div class= "text-center pt-4"><a href="order_form.php?id=<?php echo $games2['id']; ?> & price=<?php echo $games2['price']; ?>" ><button type="button" class="btn btn-info">Buy Now</button></a></div>
+                                     <div class= "text-center pt-4"><a href="order_form.php?title=<?php echo $games2['title']; ?> & price=<?php echo $games2['price']; ?>" ><button type="button" class="btn btn-info">Buy Now</button></a></div>
                                   </div>
                                </div>
                             </div>
                 <?php }
             }?> 
           </div>
-     
+     <?php
+        if (isset($_SESSION['username'])){
+            echo '<div class="text-center pt-5 pb-3"><a class="btn btn-warning btn-lg" href="Games_manager.php">Games Manager</a></div>';
+                  
+        }?>
 
-     <div class="text-center pt-5 pb-3"><a class="btn btn-warning btn-lg" href="Games_manager.php">Games Manager</a></div>
+     
 
      </div>		
   </div>

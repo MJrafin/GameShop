@@ -54,7 +54,7 @@
                             <label for="inputZip">Phone Number</label>
                             <input type="number" class="form-control" name="phone" id="phone" min="0" required>
                         </div>
-                        <input type="text" class="form-control" name="game_id" id="game_id" value="<?php echo $_GET['id']; ?>" hidden>
+                        <input type="text" class="form-control" name="game_id" id="game_id" value="<?php echo $_GET['title']; ?>" hidden>
                         <input type="number" class="form-control" name="price" id="price" value="<?php echo $_GET['price']; ?>" hidden>
                         </div>
 
