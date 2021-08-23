@@ -44,9 +44,10 @@
                             </div>  
                         <?php } ?>
          </div>
+    
+              <div class="text-center pt-5 pb-3"><a class="btn btn-warning btn-lg" href="category_manager.php">Category Manager</a></div>
     </div>
  </div>
-    
     
 
 

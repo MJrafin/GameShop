@@ -49,7 +49,6 @@
                             <td class="p-3"><?php echo "$admins[full_name]";?></td>
                             <td class="p-3"><?php echo "$admins[username]";?></td>
                             <td class="float-left">
-                                <a class="btn btn-outline-warning" href="">Update Admin</a>
                                 <a class="btn btn-outline-danger" href="Admin_delete.php?id=<?php echo $admins['id']; ?>">Delete Admin</a>
                              </td>
 
@@ -60,8 +59,51 @@
                 
          </tbody>
      </table>
-     <div class="text-center"><a class="mt-3 mb-2 btn btn-outline-success btn-lg" href="Admin_signup.php">Add Admin</a></div>
+
+     
+     <div class="text-center pt-4 m-3">
+    <a class="btn btn-warning" href="Admin_signup.php">Add Admin</a> 
+    <a class="btn btn-warning" href="">Update Password</a>
+        <div class="text-center pt-2">
+            <a class="btn btn-warning" href="Games_manager.php">Games Manager</a> 
+            <a class="btn btn-warning" href="category_manager.php">Category Manager</a>
+        </div>
     </div>
+
+    </div>
+
+
+<div class="pt-3"></div>
+         <div class="title text-center mb-1 text-warning">
+             <h3 class= "font-weight bolder py-5">Earnings</h3>
+         </div>
+    <table class="table table-bordered text-center text-white">
+         <thead class="thead">
+             <tr>
+                 <th>Game</th>
+                 <th>Total Sell</th>
+                 <th>Total Price</th>
+             </tr>
+         </thead>
+         <tbody>
+            
+                        <tr>
+                            <td class="p-3">GTA 5</td>
+                            <td class="p-3">23</td>
+                            <td class="p-3">26000</td>
+                        </tr>
+                
+         </tbody>
+     </table>
+
+                <div class="row">
+                <div class= col-lg-4></div>     
+                <div class= col-lg-4>
+                <div class="text-center text-warning pt-5"><h5 class="p-4" style="border: 2px solid white">Total Earnings: 2457890 Taka </h5> </div>
+                </div>
+                </div>    
+                <div class= col-lg-4>
+                </div>
    </div> 
 
 

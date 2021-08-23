@@ -53,6 +53,10 @@
                 <?php }
             }?> 
           </div>
+     
+
+     <div class="text-center pt-5 pb-3"><a class="btn btn-warning btn-lg" href="Games_manager.php">Games Manager</a></div>
+
      </div>		
   </div>
     
