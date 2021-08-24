@@ -1,19 +1,11 @@
 <?php 
     include ('header.php');
     require ('DB_connection.php');
-
+    $search = $_POST['search'];
  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
-      
-    
     <style>
     	.card-fix{
     		height: 650px;
@@ -28,9 +20,9 @@
  <div style="background: #000;">
     <div class="container pb-5">
         <div class="row justify-content-center pt-3 ">
-            <h4 class="text-center pb-5 pt-3 text-white">Search Results of <span class="text-info">"PUBG"</span></h4>
+            <h4 class="text-center pb-5 pt-3 text-white">Search Results of <span class="text-info"><?php echo "$search"; ?></span></h4>
                 <?php
-                    $sql= 'SELECT * FROM games ';
+                    $sql= "SELECT * FROM games WHERE title LIKE '%$search%' or description LIKE '%$search%' or category LIKE '%$search%';";
                     $result = mysqli_query($connected, $sql); 
 
                         while ($games = mysqli_fetch_array($result)) {?>

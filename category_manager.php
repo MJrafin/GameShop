@@ -38,8 +38,15 @@
                                   <?php  echo '<img class="card-img-top" src="img/',$category['image'],'" alt="" style="width: 100%; height:350px;">';?>
                                   <div class="card-body">
                                      <h3 class="card-title text-center"><?php echo " $category[title] "; ?></h3>
+                                     <h5 class="card-title">Active: <?php if ($category['active'] == 'true') {
+                                         echo 'Yes';
+                                     }else{echo 'NO';} ?></h5>
+                                     <h5 class="card-title">Featured: <?php if ($category['featured'] == 'true') {
+                                         echo 'Yes';
+                                     }else{echo 'NO';} ?></h5>
+
                                      <div class= "text-center pt-5">
-                                      <a href="category_update_form.php"><button type="button" class="btn btn-warning m-1">Update Category</button></a>
+                                      <a href="category_update_form.php?id=<?php echo $category['id']; ?>"><button type="button" class="btn btn-warning m-1">Update Category</button></a>
                                       <a href="category_manager_backend.php?id=<?php echo $category['id']; ?>&action=delete"><button type="button" name="delete" class="btn btn-danger">Delete Category</button></a>
                                     </div>
                                   </div>

@@ -38,10 +38,10 @@
                     <div class="title text-center mb-3 pt-4 text-white">
                         <h3 class="font-weight bolder">Add Game</h3>
                     </div>
-                    <form action="" class="m-auto bold-txt text-white" method="post">
+                    <form action="Games_manager_backend.php" class="m-auto bold-txt text-white" method="post" enctype="multipart/form-data">
                         
                         <div class="form-group pt-5">
-                            <label for="name">Title</label>
+                            <label for="title">Title</label>
                             <input type="text" class="form-control" name="title" id="title" required>
                         </div>
 
@@ -52,19 +52,23 @@
                         </div> -->
 
                         <div class="form-group pt-5">
-                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Category </label>
-                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                             <label class="my-1 mr-2" for="category">Category </label>
+                             <select class="custom-select my-1 mr-sm-2" id="category" name="category">
                              <option selected>Choose...</option>
-                             <option value="1">Action</option>
-                             <option value="2">Sports</option>
-                             <option value="3">FPS</option>
+                             <?php
+                                $sql= 'SELECT * FROM category WHERE active = "true";';
+                                $result = mysqli_query($connected, $sql); 
+
+                                while ($category = mysqli_fetch_array($result)) {?>
+                             <option value="<?php echo $category['title']; ?>"><?php echo " $category[title] "; ?></option>
+                             <?php } ?>
                         </select>
                         </div> 
 
 
                         <div class="form-group pt-5">
-                            <label for="exampleFormControlFile1">Enter Image</label>
-                             <input type="file" class="form-control-file" id="">
+                            <label for="image">Enter Image</label>
+                             <input type="file" class="form-control-file" id="image" name="image">
                         </div>
 
                         <div class="form-group pt-5">
@@ -78,35 +82,33 @@
                         </div>
 
                         <div class="form-group pt-5 m-2">
-                            <label for="">Active </label>
+                            <label for="location">Active </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                              <label class="form-check-label" for="inlineRadio1">yes</label>
+                              <input class="form-check-input" type="radio" name="active" id="active1" value="true">
+                              <label class="form-check-label" for="active1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" for="inlineRadio2">No</label>
+                              <input class="form-check-input" type="radio" name="active" id="active2" value="false">
+                              <label class="form-check-label" for="active2">No</label>
                             </div>
                         </div>
 
                         <div class="form-group pt-3 m-2">
                             <label for="location">Exclusive </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                              <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive1" value="true">
+                              <label class="form-check-label" for="exclusive1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" for="inlineRadio2">No</label>
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive2" value="false">
+                              <label class="form-check-label" for="exclusive2">No</label>
                             </div>
                         </div>
-
-
             
                 </div>
 
                         <div class="form-group text-center pt-5 bold-txt">
-                            <button type="submit" name="submit" class="frm-btn btn btn-warning text-center"> Confirm </button>
+                            <button type="submit" name="add" class="frm-btn btn btn-warning text-center"> Confirm </button>
                         </div>
                     </form>
                 </div>

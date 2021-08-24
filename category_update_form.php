@@ -26,7 +26,7 @@
 
 <body> 
     
-    <div style="background-image: url(img/4848691.jpg);">
+ <div style="background-image: url(img/4848691.jpg);">
     
     <div class="row pt-5 pb-3 justify-content center" style="align-items: center;">
         
@@ -38,23 +38,29 @@
                     <div class="title text-center mb-3 pt-4 text-white">
                         <h3 class="font-weight bolder">Category Update</h3>
                     </div>
-                    <form action="" class="m-auto bold-txt text-white" method="post">
-                        
+                    <form action="category_manager_backend.php" class="m-auto bold-txt text-white" method="post" enctype="multipart/form-data">
+                        <?php
+                        $sql= "SELECT * FROM category WHERE id ='$_GET[id]';";
+                        $result = mysqli_query($connected, $sql); 
+
+                        while ($category = mysqli_fetch_array($result)) {?>
                         <div class="form-group pt-5">
-                            <label for="ame">Title</label>
-                            <input type="text" class="form-control" name="title" id="title" required>
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" name="title" id="title" value="<?php echo $category['title']; ?>">
+                            <input type="text" class="form-control" name="oldtitle" value="<?php echo $category['title']; ?>" hidden>
                         </div>
 
-                        <div class="form-group pt-5">
-                            <label for="exampleFormControlFile1">Enter Category Image</label>
-                             <input type="file" class="form-control-file" id="">
-                        </div>
+                        <input type="text" name="category_id" value="<?php echo $_GET['id']; ?>" hidden>
 
+                        <div class="form-group pt-5">
+                            <label for="image">Update Category Image: </label>
+                             <input type="file" class="form-control-file" id="image" name="image" required>
+                        </div>
+                        <?php }?> 
             
-                </div>
 
                         <div class="form-group text-center pt-5 bold-txt">
-                            <button type="submit" name="submit" class="frm-btn btn btn-warning text-center"> Confirm </button>
+                            <button type="submit" name="update" class="frm-btn btn btn-warning text-center"> Confirm </button>
                         </div>
                     </form>
                 </div>

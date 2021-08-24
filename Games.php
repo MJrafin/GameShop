@@ -29,7 +29,7 @@
     <div class="container pb-5">
         <div class="row justify-content-center pt-3 ">
             <?php
-                    $sql= 'SELECT * FROM games GROUP BY category';
+                    $sql= 'SELECT * FROM games WHERE active = "true" GROUP BY category';
                     $result = mysqli_query($connected, $sql); 
                     while ($games = mysqli_fetch_array($result)) {?>
                         <h2 class="text-center pb-3 pt-3 text-white"><?php echo $games['category'] ?></h2>

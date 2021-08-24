@@ -38,11 +38,17 @@
                                <div class="card bg-dark text-white card-fix">
                                   <?php  echo '<img class="card-img-top" src="img/',$games['image'],'" alt="" style="width: 100%; height:350px;">';?>
                                   <div class="card-body">
-                                     <h3 class="card-title text-center"><?php echo " $games[title] "; ?></h3>
+                                     <h3 class="card-title text-center"><?php echo "$games[title]"; ?></h3>
                                      <p><?php echo " $games[description] "; ?></p>
                                      <h5 class="card-title">Price: <?php echo " $games[price] "; ?> Taka</h5>
+                                     <h5 class="card-title">Active: <?php if ($games['active'] == 'true') {
+                                         echo 'Yes';
+                                     }else{echo 'NO';} ?></h5>
+                                     <h5 class="card-title">Exclusive: <?php if ($games['exclusive'] == 'true') {
+                                         echo 'Yes';
+                                     }else{echo 'NO';} ?></h5>
                                      <div class= "text-center pt-3 mt-2">
-                                      <a href="Games_Update_form.php"><button type="button" class="btn btn-warning m-1">Update Game</button></a>
+                                      <a href="Games_Update_form.php?id=<?php echo $games['id']; ?>"><button type="button" name="update" class="btn btn-warning m-1">Update Game</button></a>
                                       <a href="Games_manager_backend.php?id=<?php echo $games['id']; ?>&action=delete"><button type="button" name="delete" class="btn btn-danger">Delete Game</button></a>
                                     </div>
                                   </div>

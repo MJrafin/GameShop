@@ -29,7 +29,7 @@
         <div class="row justify-content-center pt-3 ">
             <h2 class="text-center pb-3 pt-3 text-white">Categories</h2>
                 <?php
-                    $sql= 'SELECT * FROM category ';
+                    $sql= 'SELECT * FROM category WHERE active = "true";';
                     $result = mysqli_query($connected, $sql); 
 
                         while ($category = mysqli_fetch_array($result)) {?>

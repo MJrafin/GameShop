@@ -31,7 +31,7 @@
             <h2 class="text-center pb-3 pt-3 text-white"><?php echo $_GET['cat']; ?></h2>
                 <?php
                         $cate = $_GET['cat'];
-                        $sql= "SELECT * FROM games WHERE category = '$cate';";
+                        $sql= "SELECT * FROM games WHERE (category = '$cate' And active = 'true' ); ";
                         $result = mysqli_query($connected, $sql);
                         while ($games = mysqli_fetch_array($result)) {?>
                             <div class="col-lg-4 pb-4">

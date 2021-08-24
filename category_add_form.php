@@ -33,7 +33,7 @@
                     <div class="title text-center mb-3 pt-4 text-white">
                         <h3 class="font-weight bolder">Add Category</h3>
                     </div>
-                    <form action="" class="m-auto bold-txt text-white" method="post">
+                    <form action="category_manager_backend.php" class="m-auto bold-txt text-white" method="post" enctype="multipart/form-data">
                         
                         <div class="form-group pt-5">
                             <label for="name">Title</label>
@@ -41,37 +41,37 @@
                         </div>
 
                         <div class="form-group pt-5">
-                            <label for="exampleFormControlFile1">Enter Category Image</label>
-                             <input type="file" class="form-control-file" id="">
+                            <label for="image">Enter Category Image: </label>
+                             <input type="file" class="form-control-file" id="image" name="image">
                         </div>
 
                         <div class="form-group pt-5 m-2">
                             <label for="location">Active </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                              <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              <input class="form-check-input" type="radio" name="active" id="active1" value="true">
+                              <label class="form-check-label" for="active1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" for="inlineRadio2">No</label>
+                              <input class="form-check-input" type="radio" name="active" id="active2" value="false">
+                              <label class="form-check-label" for="active2">No</label>
                             </div>
                         </div>
 
                         <div class="form-group pt-3 m-2">
                             <label for="location">Featured </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                              <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              <input class="form-check-input" type="radio" name="featured" id="featured1" value="true">
+                              <label class="form-check-label" for="featured1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" for="inlineRadio2">No</label>
+                              <input class="form-check-input" type="radio" name="featured" id="featured2" value="false">
+                              <label class="form-check-label" for="featured2">No</label>
                             </div>
                         </div>
                 </div>
 
                         <div class="form-group text-center pt-5 bold-txt">
-                            <button type="submit" name="submit" class="frm-btn btn btn-warning text-center"> Confirm </button>
+                            <button type="submit" name="add" class="frm-btn btn btn-warning text-center"> Confirm </button>
                         </div>
                     </form>
                 </div>

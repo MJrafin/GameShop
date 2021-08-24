@@ -38,58 +38,62 @@
                     <div class="title text-center mb-3 pt-4 text-white">
                         <h3 class="font-weight bolder">Update Game</h3>
                     </div>
-                    <form action="" class="m-auto bold-txt text-white" method="post">
-                        
+                    <form action="Games_manager_backend.php" class="m-auto bold-txt text-white" method="post" enctype="multipart/form-data">
+                        <?php
+                    $sql= "SELECT * FROM games WHERE id ='$_GET[id]';";
+                    $result = mysqli_query($connected, $sql); 
+
+                        while ($games = mysqli_fetch_array($result)) {?>
                         <div class="form-group pt-5">
-                            <label for="name">Title</label>
-                            <input type="text" class="form-control" name="title" id="title" required>
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" name="title" id="title" value="<?php echo $games['title']; ?>">
+                        </div>
+                        <input type="text" name="game_id" value="<?php echo $_GET['id']; ?>" hidden>
+                        <div class="form-group pt-5">
+                            <label for="image">Update Image: </label>
+                             <input type="file" class="form-control-file" id="image" name="image" required>
                         </div>
 
                         <div class="form-group pt-5">
-                            <label for="exampleFormControlFile1">Enter Image</label>
-                             <input type="file" class="form-control-file" id="">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" id="description" name="description" value="<?php echo $games['description']; ?>">
                         </div>
 
                         <div class="form-group pt-5">
-                            <label for="location">Description</label>
-                            <input type="text" class="form-control" id="description" name="description">
-                        </div>
-
-                        <div class="form-group pt-5">
-                            <label for="inputZip">Price</label>
-                            <input type="number" class="form-control" name="price" id="price" min="0" required>
+                            <label for="price">Price</label>
+                            <input type="number" class="form-control" name="price" id="price" min="0" value="<?php echo $games['price']; ?>">
                         </div>
 
                         <div class="form-group pt-5 m-2">
                             <label for="location">Active </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                              <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              <input class="form-check-input" type="radio" name="active" id="active1" value="true" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="active1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" for="inlineRadio2">No</label>
+                              <input class="form-check-input" type="radio" name="active" id="active2" value="false" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="active2">No</label>
                             </div>
                         </div>
 
                         <div class="form-group pt-3 m-2">
                             <label for="location">Exclusive </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                              <label class="form-check-label" for="inlineRadio1"> Yes</label>
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive1" value="true" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="exclusive1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" for="inlineRadio2"> No</label>
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive2" value="false" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="exclusive2">No</label>
                             </div>
                         </div>
 
-
+                        <?php }?> 
             
                 </div>
 
                         <div class="form-group text-center pt-5 bold-txt">
-                            <button type="submit" name="submit" class="frm-btn btn btn-warning text-center"> Confirm </button>
+                            <button type="submit" name="update" class="frm-btn btn btn-warning text-center"> Confirm </button>
                         </div>
                     </form>
                 </div>

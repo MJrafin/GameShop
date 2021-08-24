@@ -88,12 +88,17 @@
         <img src="img/5494392.jpg" alt="">
     <div class="wrap">
         <div class="text-white text-center pb-5"> <h3 >Welcome to Element Gaming Store</h3></div>
-        <div class="search">
-           <input type="text" class="searchTerm" placeholder="Search your desired games">
-           <button type="submit" class="searchButton">
+
+        
+            <form action="search_result.php" method="post">
+                <div class="search">
+           <input type="search" name="search" class="searchTerm" placeholder="Search your desired games">
+           <button type="submit" name="searchbt" class="searchButton">
              <i class="fa fa-search"></i>
           </button>
-        </div>
+          </div>
+          </form>
+        
      </div>
     </div>
 
