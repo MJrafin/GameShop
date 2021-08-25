@@ -16,7 +16,8 @@
          <div class="title text-center mb-1">
              <h3 class= "font-weight bolder py-5">Admin Manager</h3>
          </div>
-     
+
+     <!-- Admin Manager Table -->
      <table class="table table-bordered text-center text-white">
          <thead class="thead">
              <tr>
@@ -59,6 +60,7 @@
 
 
 <div class="pt-3"></div>
+<!-- Earnings Table -->
          <div class="title text-center mb-1 text-warning">
              <h3 class= "font-weight bolder py-5">Earnings</h3>
          </div>
@@ -101,7 +103,7 @@
     
 
 
-    
+  <!-- Footer Added -->
 <?php 
     include ('footer.php');
  ?>

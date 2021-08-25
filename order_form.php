@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
+    <title>Order Form</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -24,10 +24,11 @@
 
 </head>
 <body> 
+	<!-- Background Img -->
     <div style="background-image: url(img/4848691.jpg);">
     <div class="row pt-5 pb-3 justify-content center" style="align-items: center;">
         
-        
+        <!-- Order Form -->
         <div class="col-lg-12" style="align-items: center;">
             <div class="container" style="border:#000 solid; width: 700px; height: 750px; background: #252525b8;">
                 <div class="contact-form p-3">
@@ -69,6 +70,9 @@
 </div> 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+ <!-- Footer Added -->
 <?php 
     include ('footer.php');
  ?>

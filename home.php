@@ -83,13 +83,14 @@
 <body>
 
     
- 
+ 	<!-- Background Image -->
     <div class= "crop">
         <img src="img/5494392.jpg" alt="">
     <div class="wrap">
         <div class="text-white text-center pb-5"> <h3 >Welcome to Element Gaming Store</h3></div>
 
-        
+
+        <!-- Search Bar -->
             <form action="search_result.php" method="post">
                 <div class="search">
            <input type="search" name="search" class="searchTerm" placeholder="Search your desired games">
@@ -101,6 +102,10 @@
         
      </div>
     </div>
+
+
+
+    <!-- Featured Games Section  -->
 
     <div class= "text-white"style="background: #000;">
         <div class="container pb-5">

@@ -7,15 +7,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
+    <title>Admin update</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   
      
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-      
-    
-    <style>
-    .login-box {
+ 
+
+
+<style>
+.login-box {
     margin-top: 75px;
     height: auto;
     background: #1A2226;
@@ -145,7 +146,7 @@ label {
  
     
     
-    
+    <!-- Update Admin -->
     <div class="pb-5" style="background-color: #222D32; padding-bottom: 50px;">
         <div class="row">
             <div class="col-lg-3 col-md-2"></div>
@@ -198,6 +199,9 @@ label {
         </div>
     </div>
 
+
+
+<!-- Footer Added -->
 <?php 
     include ('footer.php');
  ?>

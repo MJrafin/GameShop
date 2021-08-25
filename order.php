@@ -13,6 +13,7 @@
              <h3 class= "font-weight bolder py-5">Pending Orders</h3>
          </div>
      
+     <!-- Pending Order Table -->
      <table class="table table-bordered text-center text-white">
          <thead class="thead">
              <tr>
@@ -59,6 +60,7 @@
              <h3 class= "font-weight bolder py-5">Confirm Orders</h3>
          </div>
 
+         <!-- Confirm Order Table -->
      <table class="table table-bordered text-center text-white">
          <thead class="thead">
              <tr>
@@ -97,6 +99,9 @@
         </div>
     </div>
 </div>
+
+
+<!-- Footer Added -->
 <?php 
     include ('footer.php');
  ?>

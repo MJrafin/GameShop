@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <style>
     	.card-fix{
     		height: 650px;
@@ -17,8 +18,11 @@
 </head>
 <body>
     
+
+   <!-- bg color black  -->
  <div style="background: #000;">
     <div class="container pb-5">
+    	<!-- Search Results page -->
         <div class="row justify-content-center pt-3 ">
             <h4 class="text-center pb-5 pt-3 text-white">Search Results of <span class="text-info"><?php echo "$search"; ?></span></h4>
                 <?php
@@ -45,9 +49,10 @@
 
 
 
-
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> -->
 
+
+<!-- Footer Added -->
 <?php 
     include ('footer.php');
  ?>

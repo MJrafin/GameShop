@@ -21,11 +21,12 @@
 
 <body> 
     
+    <!-- Background Image -->
     <div style="background-image: url(img/4848691.jpg);">
     
     <div class="row pt-5 pb-3 justify-content center" style="align-items: center;">
         
-        
+        <!-- Category Add form -->
         <div class="col-lg-12" style="align-items: center;">
             <div class="container" style="border:#000 solid; width: 700px; height: 550px; background: #252525b8;">
                
@@ -79,7 +80,10 @@
         </div>
     </div>
 </div> 
-    
+
+
+
+<!-- Footer Added  -->
 <?php 
     include ('footer.php');
  ?>

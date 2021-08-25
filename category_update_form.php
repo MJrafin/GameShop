@@ -26,11 +26,13 @@
 
 <body> 
     
+
+    <!--Backround Image  -->
  <div style="background-image: url(img/4848691.jpg);">
     
     <div class="row pt-5 pb-3 justify-content center" style="align-items: center;">
         
-        
+        <!-- Category Update Form -->
         <div class="col-lg-12" style="align-items: center;">
             <div class="container" style="border:#000 solid; width: 700px; height: 550px; background: #252525b8;">
                
@@ -73,6 +75,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<!-- Footer Added -->
 <?php 
     include ('footer.php');
  ?>
