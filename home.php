@@ -31,9 +31,12 @@
   background-color: black;
 }
 
+
+
 .searchTerm:focus{
   color: #fff;
 }
+
 
 .searchButton {
   width: 40px;
@@ -50,6 +53,8 @@
 .searchButton:hover{
     color: #fff;
 }
+
+
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
@@ -90,14 +95,14 @@
         <div class="text-white text-center pb-5"> <h3 >Welcome to Element Gaming Store</h3></div>
 
 
-        <!-- Search Bar -->
+        	<!-- Search Bar -->
             <form action="search_result.php" method="post">
                 <div class="search">
            <input type="search" name="search" class="searchTerm" placeholder="Search your desired games">
            <button type="submit" name="searchbt" class="searchButton">
-             <i class="fa fa-search"></i>
+             	<i class="fa fa-search"></i>
           </button>
-          </div>
+          		</div>
           </form>
         
      </div>
