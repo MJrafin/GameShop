@@ -24,8 +24,9 @@
     <div class="container pb-5">
     	<!-- Search Results page -->
         <div class="row justify-content-center pt-3 ">
-            <h4 class="text-center pb-5 pt-3 text-white">Search Results of <span class="text-info"><?php echo "$search"; ?></span></h4>
+            <h4 class="text-center pb-5 pt-3 text-white">Search Results of "<span class="text-info"><?php echo "$search"; ?></span>"</h4>
                 <?php
+                if (ctype_alpha($_POST['search']) || ctype_alnum($_POST['search'])) {
                     $sql= "SELECT * FROM games WHERE title LIKE '%$search%' or description LIKE '%$search%' or category LIKE '%$search%';";
                     $result = mysqli_query($connected, $sql); 
 
@@ -41,7 +42,12 @@
                                   </div>
                                </div>
                             </div>
-                <?php }?> 
+                    <?php 
+                        }
+                }
+                else{?>
+                    <h4 class="text-center pb-5 pt-3 text-white"> No result found</h4>
+                    <?php  }?> 
           </div>
      </div>		
   </div>
