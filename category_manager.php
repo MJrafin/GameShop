@@ -46,8 +46,10 @@
                                      }else{echo 'NO';} ?></h5>
 
                                      <div class= "text-center pt-5">
+                                        <!-- update button sends category id with the url -->
                                       <a href="category_update_form.php?id=<?php echo $category['id']; ?>"><button type="button" class="btn btn-warning m-1">Update Category</button></a>
-                                      <a href="category_manager_backend.php?id=<?php echo $category['id']; ?>&action=delete"><button type="button" name="delete" class="btn btn-danger">Delete Category</button></a>
+                                      <!-- delete button sends category id and title with the url -->
+                                      <a href="category_manager_backend.php?id=<?php echo $category['id']; ?>&action=delete&title=<?php echo $category['title']; ?>"><button type="button" name="delete" class="btn btn-danger">Delete Category</button></a>
                                     </div>
                                   </div>
                                </div>

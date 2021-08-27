@@ -149,6 +149,7 @@ label {
                 <div class="col-lg-12 login-title">
                     ADMIN LOGIN
                     <div class="text-center pt-5 text-danger ">
+                        <!-- catche error --> 
                         <h3><?php 
                             if (isset($_GET["error"])) {
                                 if ($_GET["error"]== "usernameexist") {

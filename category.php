@@ -43,6 +43,7 @@
                             </div>  
                         <?php } ?>
          </div>
+         <!-- if session is set the Category Manageer button will be shown -->
         <?php
             if (isset($_SESSION['username'])){
                 echo '<div class="text-center pt-5 pb-3"><a class="btn btn-warning btn-lg" href="category_manager.php">Category Manager</a></div>';

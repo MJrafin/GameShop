@@ -50,6 +50,7 @@
                              <label class="my-1 mr-2" for="category">Category </label>
                              <select class="custom-select my-1 mr-sm-2" id="category" name="category">
                              <option selected>Choose...</option>
+                             <!-- shows the category that are available in the categry list -->
                              <?php
                                 $sql= 'SELECT * FROM category WHERE active = "true";';
                                 $result = mysqli_query($connected, $sql); 

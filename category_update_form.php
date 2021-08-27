@@ -65,11 +65,11 @@
                         <div class="form-group pt-5 m-2">
                             <label for="location">Active </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="active" id="active1" value="true" value="<?php echo $games['active']; ?>">
+                              <input class="form-check-input" type="radio" name="active" id="active1" value="true" value="<?php echo $categorycategory['active']; ?>">
                               <label class="form-check-label" for="active1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="active" id="active2" value="false" value="<?php echo $games['active']; ?>">
+                              <input class="form-check-input" type="radio" name="active" id="active2" value="false" value="<?php echo $category['active']; ?>">
                               <label class="form-check-label" for="active2">No</label>
                             </div>
                         </div>
@@ -77,12 +77,12 @@
                         <div class="form-group pt-3 m-2">
                             <label for="location">Featured </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive1" value="true" value="<?php echo $games['active']; ?>">
-                              <label class="form-check-label" for="exclusive1">Yes</label>
+                              <input class="form-check-input" type="radio" name="featured" id="featured" value="true" value="<?php echo $category['active']; ?>">
+                              <label class="form-check-label" for="featured">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive2" value="false" value="<?php echo $games['active']; ?>">
-                              <label class="form-check-label" for="exclusive2">No</label>
+                              <input class="form-check-input" type="radio" name="featured" id="featured" value="false" value="<?php echo $category['featured']; ?>">
+                              <label class="form-check-label" for="featured">No</label>
                             </div>
                         </div>
 

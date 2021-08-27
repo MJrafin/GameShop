@@ -1,6 +1,7 @@
 <?php 
 	include "DB_connection.php";
 	include "function.php";
+	//insertion of an order but with the status "pending"
 if (isset($_POST['submit'])) {
 		$name = $_POST['name'];
 		$email = $_POST['email'];
@@ -26,6 +27,7 @@ if (isset($_POST['submit'])) {
 		header("location: index.php");
 		exit();
 	}
+	//confirming the pending ordrs
 if (isset($_GET['id'])) {
 	$id=$_GET['id'];
 	$title = $_GET['title'];

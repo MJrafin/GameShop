@@ -1,14 +1,21 @@
 <?php 
 	include "DB_connection.php";
 	include "function.php";
+	//category deletion
 	if ($_GET['action']=="delete") {
 		$deleteid = $_GET['id'];
+		$delettitle = $_GET['title'];
+		echo $delettitle;
 		$sql="DELETE FROM category WHERE id = '$deleteid';";
 		$result = mysqli_query($connected, $sql);
+
+        $sql2="DELETE FROM games WHERE category = '$delettitle';";
+		$result2 = mysqli_query($connected, $sql2);
 		header("location: category_manager.php");
 		exit();
 	}
 
+	//category insertion
 	if (isset($_POST['add'])) {
 		$title = $_POST['title'];
 		$active = $_POST['active'];
@@ -29,12 +36,13 @@
 			exit();
 	}
 
+	//category update
 	if (isset($_POST['update'])) {
 
 		if (isset($_POST['category_id'])) {
 			$category_id = $_POST['category_id'];
 			
-				if (isset($_POST['title'])) {
+				if (isset($_POST['title'])) { //category title update in the category table and aslo in the game table 
 					$title = $_POST['title'];
 					$sql = "UPDATE category SET title = '$title' WHERE id = '$category_id';";
 					$result = mysqli_query($connected, $sql);
@@ -43,9 +51,20 @@
 					$result2 = mysqli_query($connected, $sql2);
 				}
 				
-				if (isset($_FILES['image'])) {
+				if (isset($_FILES['image'])) { //category image update
 					$image = $_FILES['image']['name'];
 					$sql = "UPDATE category SET image = '$image' WHERE id = '$category_id';";
+					$result = mysqli_query($connected, $sql);
+				}
+				if (isset($_POST['active'])) { //category activation update
+					$active = $_POST['active'];
+					$sql = "UPDATE category SET active = '$active' WHERE id = '$category_id';";
+					$result = mysqli_query($connected, $sql);
+				}
+
+				if (isset($_POST['featured'])) { //category featured update
+					$featured = $_POST['featured'];
+					$sql = "UPDATE category SET  featured = '$featured' WHERE id = '$category_id';";
 					$result = mysqli_query($connected, $sql);
 				}
 				header("location: category_manager.php");

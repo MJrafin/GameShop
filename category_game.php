@@ -30,9 +30,10 @@
     <div class="container pb-5">
         <div class="row justify-content-center pt-3 ">
             <h2 class="text-center pb-3 pt-3 text-white"><?php echo $_GET['cat']; ?></h2>
+            <!-- shows a particular category game -->
                 <?php
                         $cate = $_GET['cat'];
-                        $sql= "SELECT * FROM games WHERE (category = '$cate' And active = 'true' ); ";
+                        $sql= "SELECT * FROM games WHERE (category = '$cate' And active = 'true' ); "; 
                         $result = mysqli_query($connected, $sql);
                         while ($games = mysqli_fetch_array($result)) {?>
                             <div class="col-lg-4 pb-4">

@@ -49,7 +49,9 @@
                                          echo 'Yes';
                                      }else{echo 'NO';} ?></h5>
                                      <div class= "text-center pt-3 mt-2">
+                                        <!-- update button sends game id with the url -->
                                       <a href="Games_Update_form.php?id=<?php echo $games['id']; ?>"><button type="button" name="update" class="btn btn-warning m-1">Update Game</button></a>
+                                      <!-- delete button sends game id with the url -->
                                       <a href="Games_manager_backend.php?id=<?php echo $games['id']; ?>&action=delete"><button type="button" name="delete" class="btn btn-danger">Delete Game</button></a>
                                     </div>
                                   </div>

@@ -18,7 +18,7 @@
  		exit();
 	}
 
-	$hashedpassword = $usernameexist["password"];
+	$hashedpassword = $usernameexist["password"]; //geting the hashed password frome database and matching with the given password
 	$checkpassword = password_verify($password, $hashedpassword);
 
 	if ($checkpassword == false) {
@@ -27,7 +27,7 @@
 	}
 	else if ($checkpassword == true) {
 		session_start();
-		$_SESSION['username'] = $username;
+		$_SESSION['username'] = $username; //saving the uername in a Session variable 
 		header("location: index.php");
  		exit();
 	}

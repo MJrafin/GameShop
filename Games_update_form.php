@@ -82,11 +82,11 @@
                         <div class="form-group pt-3 m-2">
                             <label for="location">Exclusive </label>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive1" value="true" value="<?php echo $games['active']; ?>">
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive1" value="true" value="<?php echo $games['exclusive']; ?>">
                               <label class="form-check-label" for="exclusive1">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive2" value="false" value="<?php echo $games['active']; ?>">
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive2" value="false" value="<?php echo $games['exclusive']; ?>">
                               <label class="form-check-label" for="exclusive2">No</label>
                             </div>
                         </div>

@@ -149,7 +149,8 @@ label {
                 <div class="col-lg-12 login-title">
                     ADD ADMIN
                 <div class="text-center pt-5 text-danger ">
-                <h3><?php 
+                <h3><!-- catche error -->
+                    <?php  
                     if (isset($_GET["error"])) {
                         if ($_GET["error"]== "passwardMissMatch") {
                             echo 'Passward does not match!!!';

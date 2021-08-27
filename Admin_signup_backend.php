@@ -30,7 +30,7 @@ else{
  	 }
 
 
-
+// statment preperation
 $sql = "INSERT INTO admins (full_name,username, password) VALUES (?, ?, ?);";
 
 $stmt = mysqli_stmt_init($connected);
@@ -43,6 +43,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 
 $hashedpass = password_hash($password, PASSWORD_DEFAULT);
  
+ //statment exicution
 mysqli_stmt_bind_param($stmt, "sss",$fullname, $username, $hashedpass); 
 mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
