@@ -35,7 +35,7 @@
                         <h2 class="text-center pb-3 pt-3 text-white"><?php echo $games['category'] ?></h2>
                         <?php 
                         $categ = $games['category'];
-                        $sql2= "SELECT * FROM games WHERE category = '$categ';";
+                        $sql2= "SELECT * FROM games WHERE category = '$categ' AND active='true';";
                         $result2 = mysqli_query($connected, $sql2);
                         while ($games2 = mysqli_fetch_array($result2)) {?>
             

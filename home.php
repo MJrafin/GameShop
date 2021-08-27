@@ -110,14 +110,14 @@
 
 
 
-    <!-- Featured Games Section  -->
+    <!-- Exclusive Games Section  -->
 
     <div class= "text-white"style="background: #000;">
         <div class="container pb-5">
         <div class="row justify-content-center pt-3 ">
-            <h3 class="text-center pb-4 pt-3 text-white">Exclusive Featured Games</h3>
+            <h3 class="text-center pb-4 pt-3 text-white">Exclusive Games</h3>
                 <?php
-                    $sql= 'SELECT * FROM games where exclusive="true";';
+                    $sql= 'SELECT * FROM games WHERE exclusive="true" AND active="true";';
                     $result = mysqli_query($connected, $sql); 
 
                         while ($games = mysqli_fetch_array($result)) {?>
@@ -137,6 +137,34 @@
      </div>
     </div>
     
+
+
+
+
+    <!-- Featured Games Section  -->
+
+    <div class= "text-white"style="background: #000;">
+        <div class="container pb-5">
+        <div class="row justify-content-center pt-3 ">
+            <h3 class="text-center pb-4 pt-3 text-white">Featured Category</h3>
+               <?php
+                    $sql= 'SELECT * FROM category WHERE active = "true" AND featured = "true";';
+                    $result = mysqli_query($connected, $sql); 
+
+                        while ($category = mysqli_fetch_array($result)) {?>
+                            <div class="col-lg-4 pb-4">
+                               <div class="card bg-dark text-white" style="border: black 100px;">
+                                  <?php  echo '<img class="card-img-top" src="img/',$category['image'],'" alt="" style="width: 100%; height:350px;">';?>
+                                  <div class="card-body">
+                                     <h3 class="card-title text-center"><?php echo " $category[title] "; ?></h3>
+                                     <div class= "text-center pt-2 pb-1"><a href="category_game.php?cat=<?php echo $category['title'];?>"><button type="button" class="btn btn-info">Browse</button></a></div>
+                                  </div>
+                               </div>
+                            </div>  
+                        <?php } ?>  
+          </div>
+     </div>
+    </div>
 
     
 

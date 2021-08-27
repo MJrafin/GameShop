@@ -58,6 +58,34 @@
                             <label for="image">Update Category Image: </label>
                              <input type="file" class="form-control-file" id="image" name="image" required>
                         </div>
+
+
+
+                        <!-- Active & featured buttons -->
+                        <div class="form-group pt-5 m-2">
+                            <label for="location">Active </label>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="active" id="active1" value="true" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="active1">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="active" id="active2" value="false" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="active2">No</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group pt-3 m-2">
+                            <label for="location">Featured </label>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive1" value="true" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="exclusive1">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="exclusive" id="exclusive2" value="false" value="<?php echo $games['active']; ?>">
+                              <label class="form-check-label" for="exclusive2">No</label>
+                            </div>
+                        </div>
+
                         <?php }?> 
             
 

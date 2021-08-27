@@ -66,6 +66,7 @@
                             <input type="number" class="form-control" name="price" id="price" min="0" value="<?php echo $games['price']; ?>">
                         </div>
 
+                        <!-- Active & exclusive buttons -->
                         <div class="form-group pt-5 m-2">
                             <label for="location">Active </label>
                             <div class="form-check form-check-inline">
