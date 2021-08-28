@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2021 at 05:37 PM
+-- Generation Time: Aug 28, 2021 at 07:14 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -39,7 +39,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `full_name`, `username`, `password`) VALUES
-(1, 'Rony talukdar', 'rontal', '$2y$10$LpS/Q3TH9Iz3GF8HUeV55uHdlcgV.3Fj1l76xP0rRwhShfALBl0dW'),
+(1, 'Rony talukdar', 'rontal', '$2y$10$i3F2GK0c9/yRhyf1MvyrHeWm9WoRbr1Ub/5tTucoVIS85LGCDlVFe'),
 (3, 'faraz rofu', 'faro', '$2y$10$sZ4fFK9JMp/KLiU3Xaw7y..OyP2.edLVkfziwhDvNu.NzH21Da.re');
 
 -- --------------------------------------------------------
@@ -61,9 +61,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `title`, `image`, `active`, `featured`) VALUES
-(1, 'Action Games', 'yMzgIO.jpg', 'true', ''),
-(2, 'Racing Games', 'Racing1.jpg', 'true', ''),
-(3, 'Sports Games', 'sports.jpg', 'true', ''),
+(1, 'Action Games', 'yMzgIO.jpg', 'true', 'true'),
+(2, 'Racing Games', 'Racing1.jpg', 'true', 'false'),
+(3, 'Sports Games', 'sports.jpg', 'true', 'false'),
 (4, 'FPS', 'FPS.jpg', 'true', 'true');
 
 -- --------------------------------------------------------
@@ -90,8 +90,8 @@ CREATE TABLE `games` (
 
 INSERT INTO `games` (`id`, `title`, `description`, `price`, `image`, `category`, `total_sell`, `active`, `exclusive`) VALUES
 (1, 'GTA 5', 'Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond.', 2000, 'gta.jpg', 'Action Games', 2, 'true', ''),
-(2, 'Call of Duty: MW', 'The iconic first-person shooter game is back! Cross play, free maps and modes, and new engine deliver the largest technical leap in Call of Duty history.', 1500, 'cod.jpg', 'Racing Games', 1, 'true', 'true'),
-(3, 'PUBG', 'PUBG is a battle royal shooter that pits 100 players against each other in a struggle for survival. Its platforms and voice support and movements beyond gaming universe.', 1200, 'pubg.jpg', 'FPS', 1, 'true', '');
+(2, 'Call of Duty: MW', 'The iconic first-person shooter game is back! Cross play, free maps and modes, and new engine deliver the largest technical leap in Call of Duty history.', 1500, 'cod.jpg', 'Racing Games', 2, 'true', 'false'),
+(3, 'PUBG', 'PUBG is a battle royal shooter that pits 100 players against each other in a struggle for survival. Its platforms and voice support and movements beyond gaming universe.', 1200, 'pubg.jpg', 'FPS', 1, 'true', 'true');
 
 -- --------------------------------------------------------
 
@@ -105,7 +105,7 @@ CREATE TABLE `orders` (
   `customer_email` varchar(255) NOT NULL,
   `customer_phone` int(100) NOT NULL,
   `customer_address` varchar(255) NOT NULL,
-  `game_id` int(100) NOT NULL,
+  `game` varchar(255) NOT NULL,
   `order_date` date NOT NULL,
   `total_price` int(100) NOT NULL,
   `status` varchar(255) NOT NULL
@@ -115,13 +115,16 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customer_name`, `customer_email`, `customer_phone`, `customer_address`, `game_id`, `order_date`, `total_price`, `status`) VALUES
-(1, 'rock', 'rocky@gmail.com', 1999911111, 'dhaka dhaka', 1, '2021-08-23', 2000, 'confirm'),
-(2, 'star', 'rocky@gmail.com', 414141, 'dhaka dhaka', 0, '2021-08-23', 2000, ''),
-(3, 'Gazi ', 'da@gmail.com', 414141, 'dhaka dhaka', 1, '2021-08-23', 2000, ''),
-(4, 'Gazi Tra', 'rm007@nomail.c', 414141, 'dhaka dhaka', 1, '2021-08-23', 2000, ''),
-(5, 'rajuuu', 'rajumai.@notmail.com', 183222222, 'CTG CTG', 2, '2021-08-23', 1500, ''),
-(6, 'rafio', 'rafio@gmail.com', 2147483647, 'CTG CTG', 3, '2021-08-23', 1200, '');
+INSERT INTO `orders` (`id`, `customer_name`, `customer_email`, `customer_phone`, `customer_address`, `game`, `order_date`, `total_price`, `status`) VALUES
+(1, 'rock', 'rocky@gmail.com', 1999911111, 'dhaka dhaka', 'GTA 5', '2021-08-23', 2000, 'confirm'),
+(2, 'star', 'rocky@gmail.com', 414141, 'dhaka dhaka', '0', '2021-08-23', 2000, 'confirm'),
+(3, 'Gazi ', 'da@gmail.com', 414141, 'dhaka dhaka', 'GTA 5', '2021-08-23', 2000, 'confirm'),
+(4, 'Gazi Tra', 'rm007@nomail.c', 414141, 'dhaka dhaka', 'GTA 5', '2021-08-23', 2000, 'confirm'),
+(5, 'rajuuu', 'rajumai.@notmail.com', 183222222, 'CTG CTG', 'Call of Duty: MW', '2021-08-23', 1500, 'confirm'),
+(6, 'rafio', 'rafio@gmail.com', 2147483647, 'CTG CTG', 'PUBG', '2021-08-23', 1200, 'confirm'),
+(8, 'tushar', 'tushu@notmail.com', 3334552, '1/2/3 nowhere, dhaka', 'Call of Duty: MW ', '2021-08-24', 1500, 'confirm'),
+(9, 'toni', 'toni@nomail.com', 2147483647, '1/A south poll', 'tik tak toe ', '2021-08-24', 500, 'confirm'),
+(10, 'toni', 'toni@nomail.com', 122425345, '1/A south poll', 'PUBG ', '2021-08-27', 1200, 'pending');
 
 --
 -- Indexes for dumped tables
@@ -165,19 +168,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
