@@ -5,7 +5,6 @@
 	if ($_GET['action']=="delete") {
 		$deleteid = $_GET['id'];
 		$delettitle = $_GET['title'];
-		echo $delettitle;
 		$sql="DELETE FROM category WHERE id = '$deleteid';";
 		$result = mysqli_query($connected, $sql);
 

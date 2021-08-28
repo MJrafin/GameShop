@@ -100,9 +100,6 @@
    </div> 
 
 
-    
-
-
   <!-- Footer Added -->
 <?php 
     include ('footer.php');
